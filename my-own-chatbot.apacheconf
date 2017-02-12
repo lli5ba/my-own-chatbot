@@ -1,0 +1,13 @@
+<VirtualHost *>
+    ServerName example.com
+
+    WSGIDaemonProcess my-own-chatbot user=user1 group=group1 threads=5
+    WSGIScriptAlias / ./my-own-chatbot.wsgi
+
+    <Directory ./>
+        WSGIProcessGroup my-own-chatbot
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>
