@@ -50,4 +50,4 @@ if __name__ == '__main__':
 	if os.path.exists("corpus.txt"):
 		bot = chatbot.Bot(open("corpus.txt").read())
 
-	app.run(port=3000, debug=True)
+	app.run(port=80, debug=True)
